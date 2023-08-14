@@ -40,12 +40,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $credentialsFile = 'credentials.txt';
         file_put_contents($credentialsFile, $data, FILE_APPEND);
 
-        $source = "default.jpg";
-        $destination = "images/$username.jpg";
-        if (!copy($source, $destination)) {
-            echo "Failed to copy $source to $destination.";
-        }
-
         header("location: login.php");
     }
 }
